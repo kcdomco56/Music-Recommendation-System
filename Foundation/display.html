@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Recommendation App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Music Recommendation App</h1>
+    <a href="{{ auth_url }}" class="btn">Connect to Spotify</a>
+
+    <!-- Form to Submit User Preferences -->
+    <h2>Enter Your Music Preferences</h2>
+    <form action="{{ url_for('submit_preferences') }}" method="POST">
+      <label for="favorite_genre">Favorite Genre:</label>
+      <input type="text" id="favorite_genre" name="favorite_genre" placeholder="e.g., Rock, Jazz">
+
+      <label for="favorite_artist">Favorite Artist:</label>
+      <input type="text" id="favorite_artist" name="favorite_artist" placeholder="e.g., The Beatles">
+
+      <label for="mood">Listening Mood:</label>
+      <input type="text" id="mood" name="mood" placeholder="e.g., Happy, Chill">
+
+      <button type="submit" class="btn">Submit Preferences</button>
+    </form>
+  </div>
+</body>
+</html>
